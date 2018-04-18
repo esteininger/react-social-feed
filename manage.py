@@ -2,12 +2,14 @@
 
 #Flask
 from flask import Flask, Blueprint, render_template
+from flask_cors import CORS
 
 #Imports
 from Controller import InstagramRoute, PodcastRoute
 
 #run main app
 app = Flask(__name__)
+CORS(app)
 
 #import Controllers/Routes
 app.register_blueprint(InstagramRoute.mod)
